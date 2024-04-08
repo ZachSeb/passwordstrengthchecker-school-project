@@ -80,22 +80,11 @@ function checkPassword(password) {
       document.body.style.backgroundColor = decent_rgb;
       passwordResult.textContent = "In " + daysToCrack + " day" + (daysToCrack!=1?'s':"")
     }
-    else if (daysToCrack == 1000000000000) {
+    else if (daysToCrack > 1000000000) {
       document.body.style.backgroundColor = perfect_rgb;
-      let years = Math.round(daysToCrack / 365 * 10) / 10;
 
-      if (years > 1000000000000) {
-        years = years.toExponential()
-      }
-      if (years>1000000000) {
-        years = (Math.round(years/1000000000*10)/10)+' billion'
-      }
-      if (years>1000000) {
-        years = (Math.round(years/1000000*10)/10)+' million'
-      }
-      if (years>1000) {
-        years = (Math.round(years/1000))+' thousand'
-      }
+
+      let years = Number(Math.round(daysToCrack / 365 * 10) / 10).toExponential()
 
       passwordResult.textContent = "In over " + years + " years"
       passwordResultSubtitle.textContent = "Wow, this is a GREAT password! 10/10.";
@@ -103,6 +92,10 @@ function checkPassword(password) {
     else {
       document.body.style.backgroundColor = really_good_rgb;
       let years = Math.round(daysToCrack / 365 * 10) / 10;
+
+      if (years>1000000000) {
+        years = (Math.round(years/1000000000*10)/10)+' billion'
+      }
 
       if (years>1000000) {
         years = (Math.round(years/1000000*10)/10)+' million'
@@ -120,4 +113,6 @@ function checkPassword(password) {
     passwordResult.textContent = "Never?"
     passwordResultSubtitle.textContent = "Input a password to see!";
   }
+
+  
 }
