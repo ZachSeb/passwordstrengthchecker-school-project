@@ -1,0 +1,197 @@
+@keyframes pan {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+:root {
+  --primary-stripe-rgb: 255 255 255;
+  --secondary-stripe-rgb: 250 250 250;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: Poppins, Roboto, Arial;
+}
+
+pre {
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+svg {
+  display: inline-block;
+  position: absolute;
+}
+
+body {
+  background-color: rgb(240, 240, 245);
+  margin: 0;
+  padding: 0;
+}
+
+.grid-display {
+  display: grid;
+  grid-template-rows: 1.5fr .5fr 3fr;
+  align-items: center;
+  height: 100vh;
+  transition: 0.5s;
+}
+
+.grid-display#blur.active {
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+}
+
+#header {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: white;
+  background-size: 18px 18px;
+  background-image: linear-gradient(
+    -45deg,
+    rgb(var(--primary-stripe-rgb)) 25%,
+    rgb(var(--secondary-stripe-rgb)) 25%,
+    rgb(var(--secondary-stripe-rgb)) 50%,
+    rgb(var(--primary-stripe-rgb)) 50%,
+    rgb(var(--primary-stripe-rgb)) 75%,
+    rgb(var(--secondary-stripe-rgb)) 75%,
+    rgb(var(--secondary-stripe-rgb)) 100%
+  );
+
+  animation: pan 180s linear infinite;
+}
+
+#header-text {
+  font-size: 5em;
+  font-weight: bold;
+}
+
+#bottomArea {
+  position: absolute;
+  background-color: rgb(240, 240, 245);
+
+  left: 50%;
+  bottom: 0px;
+  translate: -50% 0%;
+  width: 100%;
+}
+
+#radialGradient {
+  pointer-events: none;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: radial-gradient(transparent, rgba(0, 0, 0, 0.05));
+}
+
+#passwordArea {
+  margin: 0 auto;
+  display: grid;
+  width: 40%;
+}
+
+#passwordTextbox {
+  
+  background-color: white;
+  display: block;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  
+  font-size: 1.2em;
+  margin-top: 20px;
+  border-radius: 50px;
+  border-color: transparent;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+#passwordResultArea {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 80%;
+  height: 70%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+#passwordResult {
+  font-size: 5em;
+}
+
+.result-text {
+  margin: 0;
+}
+
+#infoIcon {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  margin: 5px;
+  width: 50px;
+}
+
+#infobox {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50vh;
+
+  overflow: scroll;
+  overflow-x: hidden;
+  text-align: center;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+  background-color: rgb(245, 250, 250); 
+
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+
+#infobox.active {
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+#copyrightNotice {
+  text-align: left;
+  background-color: white;
+  margin: 20px;
+}
+
+#exitButton {
+  display: block;
+  margin-bottom: 20px;
+  padding: 20px;
+  
+  background-color: black;
+  color: white;
+
+  text-decoration: none;
+
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/icons/favicon.ico">
+
+
+  <script src="Mellt.js"></script>
+  <script src="common-passwords.js"> </script>
+  <script defer type="text/javascript" src="index.js"></script>
+
+  <title>Password Strength Checker</title>
+</head>
+<body>
+  <div class="grid-display" id="blur">
+    <div id="header">
+      <div id="header-text"><p>Password Strength Checker</p></div>
+    </div>
+    
+
+    <div id="passwordArea">
+      <input type="password" id="passwordTextbox" value onkeyup="checkPassword(this.value)" placeholder="Enter Password">
+      <label id="checkboxLabel" style="font-family: Poppins, Roboto, Arial"><input id="toggleVisibilityCheckbox" type="checkbox" onclick="toggleVisibility()">Show Password</label>
+    </div>
+    
+    <div id="passwordResultArea">
+      <h3 class="result-text">Your password would be cracked</h3>
+      <h1 class="result-text" id="passwordResult">Never?</h1>
+      <h3 class="result-text" id="passwordResultSubtitle">Input a password to see!</h3>
+    </div>
+
+    <div id="infoIcon" >
+      <a href="#" onclick="toggleBlur()"><img src="icons/info-icon.svg"></a>
+    </div>
+
+  </div>
+  
+  <div id="infobox">
+    <a href="#" onclick="toggleBlur()" id="exitButton">Exit</a>
+
+
+    <p style="font-weight: bold;">Password Strength Checker does NOT store any of your passwords! All inputs are 100% safe.</p>
+    <p>Powered by the <a href="http://mel.lt">Mellt</a> password checker, whose license is shown below</p>
+
+    <div id="copyrightNotice">
+      <pre>
+        <code>
+          Copyright (c) 2012, ravisorg
+          All rights reserved.
+    
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions are met:
+              * Redistributions of source code must retain the above copyright
+                notice, this list of conditions and the following disclaimer.
+              * Redistributions in binary form must reproduce the above copyright
+                notice, this list of conditions and the following disclaimer in the
+                documentation and/or other materials provided with the distribution.
+              * Neither the name of the Travis Richardson nor the names of its 
+                contributors may be used to endorse or promote products derived 
+                from this software without specific prior written permission.
+    
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+          WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+          DISCLAIMED. IN NO EVENT SHALL TRAVIS RICHARDSON BE LIABLE FOR ANY
+          DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+          (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+          LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+          ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+          (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+          SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        </code>
+      </pre>
+    </div>
+    
+    <p>
+      © Copyright 2024, ZachSeb<br>
+      All rights reserved.
+    </p><br>
+  </div>
+</body>
+</html>
