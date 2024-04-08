@@ -74,11 +74,13 @@ function checkPassword(password) {
     else if (daysToCrack <= 30) {
       document.body.style.backgroundColor = average_rgb;
       passwordResult.textContent = "In " + daysToCrack + " day" + (daysToCrack!=1?'s':"")
+      passwordResultSubtitle.textContent = "Average... or so. Not very good.";
       
     }
     else if (daysToCrack <= 365) {
       document.body.style.backgroundColor = decent_rgb;
       passwordResult.textContent = "In " + daysToCrack + " day" + (daysToCrack!=1?'s':"")
+      passwordResultSubtitle.textContent = "Decent. This is pretty good. But it won't hurt to add some more strength too!";
     }
     else if (daysToCrack > 1000000000) {
       document.body.style.backgroundColor = perfect_rgb;
